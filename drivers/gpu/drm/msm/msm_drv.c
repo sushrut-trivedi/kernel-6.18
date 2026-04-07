@@ -55,9 +55,7 @@ MODULE_PARM_DESC(modeset, "Use kernel modesetting [KMS] (1=on (default), 0=disab
 module_param(modeset, bool, 0600);
 
 static int separate_gpu_kms = -1;
-MODULE_PARM_DESC(separate_gpu_kms,
-		 "Use separate DRM device for the GPU (-1=auto (default), 0=single DRM
-device, 1=separate DRM devices)");
+MODULE_PARM_DESC(separate_gpu_kms, "Use separate DRM device for the GPU (-1=auto (default), 0=single DRM device, 1=separate DRM devices)");
 module_param(separate_gpu_kms, int, 0400);
 
 DECLARE_FAULT_ATTR(fail_gem_alloc);

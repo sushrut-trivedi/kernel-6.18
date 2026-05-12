@@ -97,7 +97,7 @@
 					reg = <0>;
 
 					pmic_glink_hs_in: endpoint {
-						remote-endpoint = <&usb_1_dwc3_hs>;
+						remote-endpoint = <&eud_con>;
 					};
 				};
 
@@ -652,6 +652,10 @@
 		vcc-supply = <&vreg_l6p>;
 		read-only;
 	};
+};
+
+&eud_con {
+       remote-endpoint = <&pmic_glink_hs_in>;
 };
 
 &gcc {
@@ -1386,10 +1390,6 @@
 	usb-role-switch;
 
 	status = "okay";
-};
-
-&usb_1_dwc3_hs {
-	remote-endpoint = <&pmic_glink_hs_in>;
 };
 
 &usb_1_hsphy {
